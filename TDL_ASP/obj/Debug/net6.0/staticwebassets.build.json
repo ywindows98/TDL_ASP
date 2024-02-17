@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5lRPEpx2wMujpNj631TMCMcQKsgUWhhQH1prBU4y1xs=",
+  "Hash": "h1tMgbg8n83ppyNfcrv4tImmzLf8jFLHXiny1m40lQo=",
   "Source": "TDL_ASP",
   "BasePath": "_content/TDL_ASP",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "C:\\Users\\windo\\Desktop\\C# study\\ASP\\TDL_ASP\\TDL_ASP\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TDL_ASP.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\windo\\Desktop\\C# study\\ASP\\TDL_ASP\\TDL_ASP\\wwwroot\\css\\bootswatchSlate.css",
+      "Identity": "C:\\Users\\windo\\Desktop\\C# study\\ASP\\TDL_ASP\\TDL_ASP\\wwwroot\\css\\bootswatchSlate.min.css",
       "SourceId": "TDL_ASP",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\windo\\Desktop\\C# study\\ASP\\TDL_ASP\\TDL_ASP\\wwwroot\\",
       "BasePath": "_content/TDL_ASP",
-      "RelativePath": "css/bootswatchSlate.css",
+      "RelativePath": "css/bootswatchSlate.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,7 +65,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\bootswatchSlate.css"
+      "OriginalItemSpec": "wwwroot\\css\\bootswatchSlate.min.css"
     },
     {
       "Identity": "C:\\Users\\windo\\Desktop\\C# study\\ASP\\TDL_ASP\\TDL_ASP\\wwwroot\\css\\site.css",
