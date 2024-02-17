@@ -12,7 +12,7 @@ build_property.RootNamespace = TDL_ASP
 build_property.ProjectDir = C:\Users\windo\Desktop\C# study\ASP\TDL_ASP\TDL_ASP\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\windo\Desktop\C# study\ASP\TDL_ASP\TDL_ASP
 build_property._RazorSourceGeneratorDebug = 
 
