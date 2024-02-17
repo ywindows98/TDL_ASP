@@ -5,7 +5,6 @@
         FreeTime,
         Low,
         Medium,
-        High,
-        Extreme
+        High
     }
 }

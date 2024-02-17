@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\TDL_ASP.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\windo\\Desktop\\C# study\\ASP\\TDL_ASP\\TDL_ASP\\wwwroot\\css\\bootswatchSlate.css",
+      "PackagePath": "staticwebassets\\css\\bootswatchSlate.css"
+    },
+    {
       "Id": "C:\\Users\\windo\\Desktop\\C# study\\ASP\\TDL_ASP\\TDL_ASP\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
