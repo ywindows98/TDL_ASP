@@ -2,9 +2,9 @@
 {
     public enum PriorityEnum
     {
-        FreeTime,
-        Low,
+        High,
         Medium,
-        High
+        Low,
+        FreeTime
     }
 }

@@ -18,5 +18,20 @@ namespace TDL_ASP.Controllers
             IEnumerable<ToDoTask> objToDoTaskList = _db.Tasks;
             return View(objToDoTaskList);
         }
+
+        public IActionResult Create()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(ToDoTask task)
+        {
+            _db.Tasks.Add(task);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
