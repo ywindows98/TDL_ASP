@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<ToDoTask>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -15,7 +16,7 @@
 <section id="tasks" class="my-3">
     <div class="container-lg">
         <div class="row justify-content-center">
-            <table class="table h5">
+            <table class="table table-bordered h5">
                 <thead>
                   <tr>
                     <th scope="col" class="text-center col-2">Priority</th>
@@ -26,19 +27,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="bg-danger text-center">High</td>
-                    <td class="bg-primary text-center">Create ToDo List</td>
-                    <td class="bg-primary text-center text-danger">25%</td>
-                    <td class="bg-primary text-center">20.02.2024 (3 days)</td>
-                    <td class="bg-primary text-center">
-                        <div class="d-flex justify-content-evenly" style="width: 60%; margin: 0 auto;">
-                            <a asp-area="" asp-controller="" asp-action=""><i class="bi bi-card-text"></i></a>
-                            <a class="" asp-area="" asp-controller="" asp-action=""><i class="bi bi-pencil-square"></i></a>
-                            <a class="" asp-area="" asp-controller="" asp-action=""><i class="bi bi-x-circle text-danger"></i></a>
-                        </div>
-                    </td>
-                  </tr>
+                    @foreach(var obj in Model)
+                    {
+                      <tr>
+                            <td class="bg-danger text-center">@obj.Priority</td>
+                            <td class="bg-primary text-center">@obj.Name</td>
+                            <td class="bg-primary text-center text-danger">@obj.Status</td>
+                            <td class="bg-primary text-center">@obj.Deadline</td>
+                            <td class="bg-primary text-center">
+                                <div class="d-flex justify-content-evenly" style="width: 60%; margin: 0 auto;">
+                                    <a asp-area="" asp-controller="" asp-action=""><i class="bi bi-card-text"></i></a>
+                                    <a class="" asp-area="" asp-controller="" asp-action=""><i class="bi bi-pencil-square"></i></a>
+                                    <a class="" asp-area="" asp-controller="" asp-action=""><i class="bi bi-x-circle text-danger"></i></a>
+                                </div>
+                            </td>
+                      </tr>                        
+                    }
+
                 </tbody>
             </table>
         </div>
