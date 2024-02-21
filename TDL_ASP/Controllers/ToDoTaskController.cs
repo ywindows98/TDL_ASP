@@ -19,6 +19,12 @@ namespace TDL_ASP.Controllers
             return View(objToDoTaskList);
         }
 
+        public IActionResult Details()
+        {
+            IEnumerable<ToDoTask> objToDoTaskList = _db.Tasks;
+            return View(objToDoTaskList);
+        }
+
         public IActionResult Create()
         {
             
@@ -29,9 +35,21 @@ namespace TDL_ASP.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(ToDoTask task)
         {
-            _db.Tasks.Add(task);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if(task.Name == task.Description)
+            {
+                ModelState.AddModelError("SameNameDescription", "Description can not be the same as name."); // key, value
+                ModelState.AddModelError("name", "Name value cannot be accepted."); // name/ Name key will change the error in this case
+            }
+            //ModelState.AddModelError("name", "Name value cannot be accepted."); // wont work
+            if (ModelState.IsValid)
+            {
+                
+                _db.Tasks.Add(task);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(task);
         }
     }
 }
