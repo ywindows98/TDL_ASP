@@ -90,5 +90,23 @@ namespace TDL_ASP.Controllers
 
             return View(task);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int? id)
+        {
+
+            var taskEntity = _db.Tasks.Find(id);
+
+            if (taskEntity == null)
+            {
+                return NotFound();
+            }
+
+            _db.Tasks.Remove(taskEntity);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }

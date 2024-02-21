@@ -30,15 +30,15 @@
                     @foreach(var obj in Model)
                     {
                       <tr>
-                            <td class="bg-danger text-center">@obj.Priority</td>
+                            <td class="bg-danger text-center priorityContainer text-dark" >@obj.Priority</td>
                             <td class="bg-primary text-center">@obj.Name</td>
-                            <td class="bg-primary text-center text-danger">@obj.Status</td>
+                            <td class="bg-primary text-center statusContainer text-danger">@obj.Status</td>
                             <td class="bg-primary text-center">@obj.Deadline</td>
                             <td class="bg-primary text-center">
                                 <div class="d-flex justify-content-evenly" style="width: 60%; margin: 0 auto;">
                                     <a asp-area="" asp-controller="" asp-action=""><i class="bi bi-card-text"></i></a>
                                     <a class="" asp-area="" asp-controller="ToDoTask" asp-action="Edit" asp-route-id = "@obj.Id"><i class="bi bi-pencil-square"></i></a>
-                                    <a class="" asp-area="" asp-controller="" asp-action=""><i class="bi bi-x-circle text-danger"></i></a>
+                                        <a class="" asp-area="" asp-controller="ToDoTask" asp-action="Delete" asp-route-id = "@obj.Id"><i class="bi bi-x-circle text-danger"></i></a>
                                 </div>
                             </td>
                       </tr>                        
@@ -49,3 +49,42 @@
         </div>
     </div>
 </section>
+
+<script>
+    // priority
+    priorityContainers = document.getElementsByClassName("priorityContainer");
+    //console.log(priorityContainers.length);
+    for(i=0; i<priorityContainers.length; i++){
+        //console.log(priorityContainers[i].innerHTML);
+        switch (priorityContainers[i].innerHTML){
+            case "FreeTime":
+                priorityContainers[i].classList.replace("bg-danger", "bg-light");
+                break;
+            case "Low":
+                priorityContainers[i].classList.replace("bg-danger", "bg-success");
+                break;
+            case "Medium":
+                priorityContainers[i].classList.replace("bg-danger", "bg-warning");
+                break;
+        }
+    }
+
+    // status
+    statusContainers = document.getElementsByClassName("statusContainer");
+    //console.log(statusContainers.length);
+    for(i=0; i<statusContainers.length; i++){
+        //console.log(statusContainers[i].innerHTML);
+        switch (statusContainers[i].innerHTML){
+            case "100%":
+                statusContainers[i].classList.replace("text-danger", "text-success");
+                break;
+            case "75%":
+                statusContainers[i].classList.replace("text-danger", "text-warning");
+                break;
+        }
+    }
+
+
+</script>
+
+
