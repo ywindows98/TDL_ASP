@@ -20,11 +20,16 @@ namespace TDL_ASP.Models
 
         public string GetDateStr()
         {
-            string date="";
-            for(int i=0; i<10; i++)
+            string date = "";
+            string daysUntilDeadline = (Deadline - DateTime.Today).Days.ToString();
+            for (int i=0; i<10; i++)
             {
                 date += Deadline.ToString()[i];
             }
+
+            date += $" ({daysUntilDeadline} days)";
+
+
 
             return date;
         }
