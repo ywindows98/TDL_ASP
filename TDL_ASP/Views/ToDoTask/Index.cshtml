@@ -28,26 +28,28 @@
             <table class="table table-bordered h5">
                 <thead>
                   <tr>
-                    <th scope="col" class="text-center col-2">Priority</th>
-                    <th scope="col" class="text-center col-3">Name</th>
-                    <th scope="col" class="text-center col-2">Status</th>
-                    <th scope="col" class="text-center col-3">Deadline <i class="bi bi-calendar-week"></i></th>
-                    <th scope="col" class="text-center col-2">Controls</th>
+                    <th scope="col" class="text-center col-1">Priority</th>
+                    <th scope="col" class="text-center col-2">Name</th>
+                    <th scope="col" class="text-center col-1">Status</th>
+                    <th scope="col" class="text-center col-2">Deadline <i class="bi bi-calendar-week"></i></th>
+                    <th scope="col" class="text-center col-5">Description</th>
+                    <th scope="col" class="text-center col-1">Controls</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach(var obj in Model)
+                    
+                    @foreach (var obj in Model)
                     {
-                      <tr>
+                        <tr>
                             <td class="bg-danger text-center priorityContainer text-dark" >@obj.Priority</td>
                             <td class="bg-primary text-center">@obj.Name</td>
                             <td class="bg-primary text-center statusContainer text-danger">@obj.Status</td>
-                            <td class="bg-primary text-center">@obj.Deadline</td>
+                            <td class="bg-primary text-center">@obj.GetDateStr()</td>
+                            <td class="bg-primary text-center">@obj.Description</td>
                             <td class="bg-primary text-center">
                                 <div class="d-flex justify-content-evenly" style="width: 60%; margin: 0 auto;">
-                                    <a asp-area="" asp-controller="" asp-action=""><i class="bi bi-card-text"></i></a>
                                     <a class="" asp-area="" asp-controller="ToDoTask" asp-action="Edit" asp-route-id = "@obj.Id"><i class="bi bi-pencil-square"></i></a>
-                                        <a class="" asp-area="" asp-controller="ToDoTask" asp-action="Delete" asp-route-id = "@obj.Id"><i class="bi bi-x-circle text-danger"></i></a>
+                                    <a class="" asp-area="" asp-controller="ToDoTask" asp-action="Delete" asp-route-id = "@obj.Id"><i class="bi bi-x-circle text-danger"></i></a>
                                 </div>
                             </td>
                       </tr>                        

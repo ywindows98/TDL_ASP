@@ -17,5 +17,16 @@ namespace TDL_ASP.Models
         public string Status { get; set; }
         public DateTime Deadline { get; set; }
         public string Description { get; set; }
+
+        public string GetDateStr()
+        {
+            string date="";
+            for(int i=0; i<10; i++)
+            {
+                date += Deadline.ToString()[i];
+            }
+
+            return date;
+        }
     }
 }

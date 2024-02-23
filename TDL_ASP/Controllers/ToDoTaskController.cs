@@ -19,12 +19,6 @@ namespace TDL_ASP.Controllers
             return View(objToDoTaskList);
         }
 
-        public IActionResult Details()
-        {
-            IEnumerable<ToDoTask> objToDoTaskList = _db.Tasks;
-            return View(objToDoTaskList);
-        }
-
         public IActionResult Create()
         {
             
@@ -98,14 +92,10 @@ namespace TDL_ASP.Controllers
         }
 
 
-
-		[HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Delete(int? id)
         {
 
             var taskEntity = _db.Tasks.Find(id);
-
             if (taskEntity == null)
             {
                 return NotFound();
