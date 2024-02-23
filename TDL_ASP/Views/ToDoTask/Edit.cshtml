@@ -54,7 +54,7 @@
 
 			<div class="col-2 d-flex justify-content-evenly">
 				<a asp-controller="ToDoTask" asp-action="Index" class="btn btn-danger px-4" style="max-height:50px;">Cancel</a>
-				<button type="submit" class="btn btn-submit bg-success text-light" style="max-height:50px;">Update</button>
+				<button type="submit" class="btn btn-submit bg-success text-light" style="max-height:50px;" onclick="displayErrors()">Update</button>
 			</div>
 			<div class="col-8 d-lg-none">
 
@@ -74,13 +74,14 @@
 <script>
 	validation_header = document.getElementById("validation_header");
 	validation_content = document.getElementById("validation_content");
-
-	console.log(validation_content.children[0].children[0].style["display"] == "none");
 	if(validation_content.children[0].children[0].style["display"] == "none"){
-		validation_header.style.display = "none";
-	}else{
+			validation_header.style.display = "none";
+	}
+
+	function displayErrors(){
 		validation_header.style.display = "block";
 	}
+
 </script>
 
 
