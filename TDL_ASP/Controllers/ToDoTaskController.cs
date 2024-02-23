@@ -46,8 +46,11 @@ namespace TDL_ASP.Controllers
                 
                 _db.Tasks.Add(task);
                 _db.SaveChanges();
+
+                TempData["created"] = task.Name;
+                TempData["edited"] = null;
                 return RedirectToAction("Index");
-            }
+			}
 
             return View(task);
         }
@@ -85,13 +88,18 @@ namespace TDL_ASP.Controllers
 
                 _db.Tasks.Update(task);
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+
+                TempData["created"] = null;
+                TempData["edited"] = task.Name;
+				return RedirectToAction("Index");
             }
 
             return View(task);
         }
 
-        [HttpPost]
+
+
+		[HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int? id)
         {
